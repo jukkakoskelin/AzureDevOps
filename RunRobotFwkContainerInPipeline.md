@@ -4,6 +4,7 @@ GitHub Actions has an amazing feature for spinning up containers runtime in pipe
 
 One Approach would be using a ready-made container and spinning it up with bash command:
 
+~~~~
 steps:
 - task: Bash@3
   inputs:
@@ -20,5 +21,6 @@ steps:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'TestResults'
     publishLocation: 'Container'
+~~~~	
 
 Using https://github.com/ppodgorsek/docker-robot-framework as example here. The latest version does run sudo user inside the container and can't write output to Azure Pipelines Agent, haven't figured out that yet.
