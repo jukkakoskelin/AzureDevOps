@@ -23,4 +23,9 @@ steps:
     publishLocation: 'Container'
 ~~~~	
 
-Using https://github.com/ppodgorsek/docker-robot-framework as example here. The latest version does run sudo user inside the container and can't write output to Azure Pipelines Agent, haven't figured out that yet.
+Using https://github.com/ppodgorsek/docker-robot-framework as example here. 
+
+Todo:
+
+- The latest version does not run sudo user inside the container and can't write output to Azure Pipelines Agent. Need to do this within context of Pipelines Agent: 'docker run --user=1001:1001 ppodgorsek/robot-framework:latest'
+- Reading test results in xunit-format would require passing the '--xunit' switch in format that the container understands.
